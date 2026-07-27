@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato | Ford Ranger 2026</title>
+  <meta name="description" content="Fale com a concessionária sobre a nova Ranger 2026.">
+  <link rel="icon" type="image/png" href="img/favicon-ford.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <div class="container cabecalho__barra">
+      <a href="index.html" class="marca">
+        <img class="marca__logo" src="img/logo-ford.png" alt="Ford">
+      </a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="menu-toggle-label" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="nav-principal" aria-label="Navegação principal">
+        <ul class="nav-principal__lista">
+          <li><a class="nav-principal__link" href="index.html">Home</a></li>
+          <li><a class="nav-principal__link" href="lancamento.html">Lançamento</a></li>
+          <li><a class="nav-principal__link" href="contato.html" aria-current="page">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="secao container">
+    <div class="contato__grid">
+      <figure class="contato__figura">
+        <img src="img/ranger-black.jpg" alt="Ford Ranger Black estacionada sob um viaduto">
+      </figure>
+
+      <!-- Passo 12: formulário com nome, e-mail, telefone, tipo de contato, mensagem e botão Enviar -->
+      <form class="formulario" action="#" method="post" novalidate>
+        <h1 class="formulario__titulo">Sobre você</h1>
+
+        <div class="campo">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required minlength="3">
+        </div>
+
+        <div class="campo">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="voce@exemplo.com" required>
+        </div>
+
+        <div class="campo">
+          <label for="telefone">Telefone</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" pattern="^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$" required>
+        </div>
+
+        <div class="campo">
+          <label for="tipo-contato">Como deseja ser contactado</label>
+          <select id="tipo-contato" name="tipo-contato" required>
+            <option value="" disabled selected>Selecione uma opção</option>
+            <option value="elogio">Elogio</option>
+            <option value="reclamacao">Reclamação</option>
+            <option value="solicitacao">Solicitação</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" placeholder="Conte pra gente o que você precisa" required minlength="10"></textarea>
+        </div>
+
+        <div class="formulario__rodape">
+          <span class="status-envio">* todos os campos são obrigatórios</span>
+          <!-- Passo 13: transição visual ao passar o cursor -->
+          <button type="submit" class="btn btn--enviar">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape__barra">
+      <div class="redes-sociais">
+        <span class="redes-sociais__rotulo">Redes Sociais</span>
+        <a class="redes-sociais__link" href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+          <img src="img/facebook-50.png" alt="">
+        </a>
+        <a class="redes-sociais__link" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+          <img src="img/instagram-50.png" alt="">
+        </a>
+        <a class="redes-sociais__link" href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">
+          <img src="img/youtube-50.png" alt="">
+        </a>
+      </div>
+      <p class="copyright">© 2026 Ford Motor Company — Todos os direitos reservados.</p>
+      <span class="rodape__selo"><img src="img/favicon-ford.png" alt="" style="width:100%;height:auto;"></span>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lançamento Ranger 2026 | Ford</title>
+  <meta name="description" content="Vídeo de divulgação, galeria e tabela de modelos da nova Ranger 2026.">
+  <link rel="icon" type="image/png" href="img/favicon-ford.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <div class="container cabecalho__barra">
+      <a href="index.html" class="marca">
+        <img class="marca__logo" src="img/logo-ford.png" alt="Ford">
+      </a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="menu-toggle-label" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="nav-principal" aria-label="Navegação principal">
+        <ul class="nav-principal__lista">
+          <li><a class="nav-principal__link" href="index.html">Home</a></li>
+          <li><a class="nav-principal__link" href="lancamento.html" aria-current="page">Lançamento</a></li>
+          <li><a class="nav-principal__link" href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Passo 9: vídeo promocional + breve descrição na área superior -->
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/vQsryuNmsL0"
+        title="Vídeo promocional Ford Ranger 2026"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+    <div class="container">
+      <p class="video-legenda">Assista ao vídeo de lançamento da nova Ranger 2026: motor turbodiesel, tração 4x4 e um interior pensado para estrada e trilha.</p>
+    </div>
+
+    <!-- Passo 10: três imagens do veículo ocupando toda a largura -->
+    <section class="secao container">
+      <div class="galeria">
+        <figure class="galeria__item">
+          <img src="img/xl-cabine.webp" alt="Ford Ranger XL Cabine Simples 2.2 Diesel, na cor vermelha">
+        </figure>
+        <figure class="galeria__item">
+          <img src="img/ranger-black.jpg" alt="Ford Ranger Black 2.2 Diesel 4x4, na cor preta, estacionada sob um viaduto">
+        </figure>
+        <figure class="galeria__item">
+          <img src="img/storm.webp" alt="Ford Ranger Storm 3.0 Diesel 4x4, na cor vermelha">
+        </figure>
+      </div>
+    </section>
+
+    <!-- Passo 11 (adaptado): modelos em cards horizontais + comparação funcional via JS -->
+    <section class="secao container">
+      <h2 class="secao__titulo">Modelos disponíveis</h2>
+      <p class="modelos-instrucao">Selecione 2 ou 3 versões e clique em "Comparar carros" para ver lado a lado.</p>
+
+      <div class="modelos-lista">
+        <article class="modelo-card">
+          <label class="modelo-card__selecionar">
+            <input
+              type="checkbox"
+              class="checkbox-comparar">
+            Selecionar para comparar
+          </label>
+          <img class="modelo-card__foto" src="img/xl-cabine.webp" alt="Foto da Ford Ranger XL Cabine Simples 2.2 Diesel">
+          <h3 class="modelo-card__versao">
+            XL Cabine Simples 2.2 Diesel
+            <img class="icone-info" src="img/info.png" alt="Mais informações" title="Versão de entrada, tração 4x2, ideal para uso comercial e transporte de carga.">
+          </h3>
+          <dl class="modelo-card__specs">
+            <div><dt>Motor / Câmbio</dt><dd>2.2L Turbodiesel / Manual 6M</dd></div>
+            <div><dt>Tração</dt><dd>4x2</dd></div>
+            <div><dt>Preço sugerido</dt><dd>R$ 189.900,00</dd></div>
+          </dl>
+        </article>
+
+        <article class="modelo-card">
+          <label class="modelo-card__selecionar">
+            <input
+              type="checkbox"
+              class="checkbox-comparar">
+            Selecionar para comparar
+          </label>
+          <img class="modelo-card__foto" src="img/ranger-black.jpg" alt="Foto da Ford Ranger Black 2.2 Diesel 4x4">
+          <h3 class="modelo-card__versao">
+            Ranger Black 2.2 Diesel 4x4 AT
+            <img class="icone-info" src="img/info.png" alt="Mais informações" title="Edição especial com acabamento escurecido, rodas exclusivas e tração 4x4 automática.">
+          </h3>
+          <dl class="modelo-card__specs">
+            <div><dt>Motor / Câmbio</dt><dd>2.2L Turbodiesel / Automático 6A</dd></div>
+            <div><dt>Tração</dt><dd>4x4</dd></div>
+            <div><dt>Preço sugerido</dt><dd>R$ 219.500,00</dd></div>
+          </dl>
+        </article>
+
+        <article class="modelo-card">
+          <label class="modelo-card__selecionar">
+            <input
+              type="checkbox"
+              class="checkbox-comparar">
+            Selecionar para comparar
+          </label>
+          <img class="modelo-card__foto" src="img/storm.webp" alt="Foto da Ford Ranger Storm 3.0 Diesel 4x4">
+          <h3 class="modelo-card__versao">
+            Storm 3.0 Diesel 4x4 AT
+            <img class="icone-info" src="img/info.png" alt="Mais informações" title="Topo de linha, motor V6, tração 4x4 automática e maior capacidade off-road.">
+          </h3>
+          <dl class="modelo-card__specs">
+            <div><dt>Motor / Câmbio</dt><dd>3.0L V6 Turbodiesel / Automático 10A</dd></div>
+            <div><dt>Tração</dt><dd>4x4</dd></div>
+            <div><dt>Preço sugerido</dt><dd>R$ 289.900,00</dd></div>
+          </dl>
+        </article>
+      </div>
+
+      <div class="acoes-tabela">
+        <!-- conforme roteiro: o clique neste botão não possui funcionalidade de comparação -->
+        <button type="button" class="btn">Comparar carros</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape__barra">
+      <div class="redes-sociais">
+        <span class="redes-sociais__rotulo">Redes Sociais</span>
+        <a class="redes-sociais__link" href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+          <img src="img/facebook-50.png" alt="">
+        </a>
+        <a class="redes-sociais__link" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+          <img src="img/instagram-50.png" alt="">
+        </a>
+        <a class="redes-sociais__link" href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">
+          <img src="img/youtube-50.png" alt="">
+        </a>
+      </div>
+      <p class="copyright">© 2026 Ford Motor Company — Todos os direitos reservados.</p>
+      <span class="rodape__selo"><img src="img/favicon-ford.png" alt="" style="width:100%;height:auto;"></span>
+    </div>
+  </footer>
+
+</body>
+</html>

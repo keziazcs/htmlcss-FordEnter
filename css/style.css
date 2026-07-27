@@ -1,0 +1,513 @@
+/* ==========================================================================
+   DESAFIO 04 — HTML & CSS | Portal de lançamento Ford Ranger
+   Autor: Kézia Carneiro Silva
+   Layout fiel às Figuras 1, 2 e 3 do roteiro: header branco, footer azul
+   marinho, sem elementos decorativos além do exigido.
+   ========================================================================== */
+
+/* fonte externa (exigida nos objetivos de aprendizagem) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* cores obrigatórias do roteiro */
+  --azul-profundo: #1b357e;
+  --azul-vivo: #1351d8;
+
+  --texto: #222;
+  --cinza-claro: #f2f3f5;
+  --borda: #d7dae0;
+  --branco: #ffffff;
+
+  --fonte: 'Inter', Arial, sans-serif;
+  --transicao: 200ms ease;
+}
+
+/* -------------------- Reset básico -------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* footer sempre na base (Passo 4) */
+  font-family: var(--fonte);
+  color: var(--texto);
+  background: var(--branco);
+  line-height: 1.5;
+}
+
+main { flex: 1 0 auto; }
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; margin: 0; padding: 0; }
+
+h1, h2, h3 { margin: 0 0 .5em; color: var(--azul-profundo); }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin-inline: auto;
+}
+
+/* ==========================================================================
+   HEADER — logomarca + navegação (Passo 1 / Passo 6)
+   ========================================================================== */
+.cabecalho {
+  background: var(--branco);
+  border-bottom: 1px solid var(--borda);
+}
+
+.cabecalho__barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .9rem 0;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+}
+
+.marca__logo {
+  height: 40px;
+  width: auto;
+}
+
+/* -------------------- Navegação -------------------- */
+.nav-principal__lista {
+  display: flex;
+  gap: 1.8rem;
+}
+
+.nav-principal__link {
+  font-size: .95rem;
+  font-weight: 500;
+  color: var(--azul-profundo);
+  padding: .25rem 0;
+  border-bottom: 2px solid transparent;
+  transition: color var(--transicao), border-color var(--transicao);
+}
+
+/* pseudoclasses de navegação */
+.nav-principal__link:hover,
+.nav-principal__link:focus-visible {
+  color: var(--azul-vivo);
+}
+
+.nav-principal__link[aria-current="page"] {
+  border-bottom-color: var(--azul-vivo);
+  color: var(--azul-vivo);
+}
+
+/* -------------------- Menu mobile (checkbox hack, sem JS) -------------------- */
+.menu-toggle { display: none; }
+
+.menu-toggle-label {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: .4rem;
+}
+
+.menu-toggle-label span {
+  width: 24px;
+  height: 2px;
+  background: var(--azul-profundo);
+}
+
+/* ==========================================================================
+   HOME — imagem de lançamento + legenda (Passo 7)
+   ========================================================================== */
+.hero-imagem {
+  width: 100%;
+  line-height: 0;
+}
+
+.hero-imagem img {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+}
+
+.hero-legenda {
+  background: var(--branco);
+  padding: .9rem 0;
+  border-bottom: 1px solid var(--borda);
+}
+
+.hero-legenda p {
+  margin: 0;
+  font-size: .9rem;
+  color: var(--texto);
+}
+
+.hero-legenda a {
+  color: var(--azul-vivo);
+  text-decoration: underline;
+}
+
+.hero-legenda a:hover { color: var(--azul-profundo); }
+
+/* ==========================================================================
+   SEÇÕES GERAIS
+   ========================================================================== */
+.secao { padding: 2rem 0; }
+
+.secao__titulo {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+/* -------------------- Vídeo promocional (Passo 9) -------------------- */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 42%;
+  background: #000;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-legenda {
+  padding: .8rem 0 0;
+  font-size: .9rem;
+}
+
+/* -------------------- Galeria (Passo 10) -------------------- */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .8rem;
+  margin-top: 1rem;
+}
+
+.galeria__item {
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--borda);
+  background: var(--branco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .6rem;
+}
+
+.galeria__item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* ==========================================================================
+   MODELOS DISPONÍVEIS + COMPARADOR (Passo 11, adaptado a pedido: cards em
+   linha horizontal em vez de tabela, com comparação interativa via JS)
+   ========================================================================== */
+.modelos-instrucao {
+  margin: 0 0 1.2rem;
+  color: #555;
+  font-size: .92rem;
+}
+
+/* -------------------- Cards horizontais dos modelos -------------------- */
+.modelos-lista {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.modelo-card {
+  flex: 1 1 260px;
+  border: 1px solid var(--borda);
+  background: var(--branco);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.modelo-card__selecionar {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .82rem;
+  color: var(--azul-profundo);
+  cursor: pointer;
+}
+
+.modelo-card__foto {
+  width: 100%;
+  height: 140px;
+  object-fit: contain;
+  background: var(--cinza-claro);
+}
+
+.modelo-card__versao {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: 1.02rem;
+  margin: 0;
+}
+
+.modelo-card__specs {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  font-size: .9rem;
+}
+
+.modelo-card__specs div {
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+  border-bottom: 1px dashed var(--borda);
+  padding-bottom: .3rem;
+}
+
+.modelo-card__specs dt { color: #666; }
+.modelo-card__specs dd { margin: 0; font-weight: 600; }
+
+.checkbox-comparar {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--azul-vivo);
+  cursor: pointer;
+}
+
+.icone-info {
+  width: 16px;
+  height: 16px;
+  cursor: help;
+  opacity: .75;
+  transition: opacity var(--transicao);
+}
+
+.icone-info:hover,
+.icone-info:focus-visible { opacity: 1; }
+
+.acoes-tabela {
+  padding: 1.2rem 0;
+  text-align: center;
+}
+
+.btn {
+  font-size: .95rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  padding: .7rem 1.6rem;
+  background: var(--azul-vivo);
+  color: var(--branco);
+  transition: background var(--transicao), transform var(--transicao), box-shadow var(--transicao);
+}
+
+/* movimento no hover: o botão "levanta" levemente */
+.btn:hover,
+.btn:focus-visible {
+  background: var(--azul-profundo);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 18px -8px rgba(19, 81, 216, 0.45);
+}
+
+/* movimento no clique: o botão "afunda" de volta */
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ==========================================================================
+   FORMULÁRIO DE CONTATO (Passo 12 / 13)
+   ========================================================================== */
+.contato__grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.contato__figura {
+  border: 1px solid var(--borda);
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.contato__figura img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 32% 45%;
+}
+
+.formulario {
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  padding: 1.6rem;
+}
+
+.formulario__titulo {
+  font-size: 1.1rem;
+  margin-bottom: 1.1rem;
+}
+
+.campo {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+}
+
+.campo label {
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--azul-profundo);
+  text-transform: uppercase;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  font-family: var(--fonte);
+  font-size: 1rem;
+  padding: .65rem .8rem;
+  border: 1px solid var(--borda);
+  background: var(--branco);
+  color: var(--texto);
+  transition: border-color var(--transicao);
+}
+
+.campo textarea { resize: vertical; min-height: 100px; }
+
+/* pseudoclasses de formulário (hierarquia exigida pelo roteiro) */
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--azul-vivo);
+}
+
+.campo input:required:invalid:not(:placeholder-shown) { border-color: #c1432e; }
+.campo input:valid:not(:placeholder-shown) { border-color: #2f8f5b; }
+
+.campo small { color: #666; font-size: .78rem; }
+
+.formulario__rodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+/* botão Enviar com transição visual (Passo 13 — opcional, implementado) */
+/* botão Enviar: mesmo movimento do .btn, com um leve "crescimento" a mais */
+.btn--enviar:hover,
+.btn--enviar:focus-visible {
+  background: var(--azul-profundo);
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 10px 18px -8px rgba(19, 81, 216, 0.45);
+}
+
+.btn--enviar:active {
+  transform: translateY(0) scale(1);
+  box-shadow: none;
+}
+
+.status-envio { font-size: .82rem; color: #666; }
+
+/* ==========================================================================
+   FOOTER — redes sociais + copyright (Passo 3 / Passo 8)
+   ========================================================================== */
+.rodape {
+  background: var(--azul-profundo);
+  color: var(--branco);
+  flex-shrink: 0;
+}
+
+.rodape__barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.redes-sociais {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+
+.redes-sociais__rotulo { font-size: .8rem; }
+
+.redes-sociais__link {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,0.12);
+  transition: background var(--transicao);
+}
+
+.redes-sociais__link:hover,
+.redes-sociais__link:focus-visible { background: rgba(255,255,255,0.3); }
+
+.redes-sociais__link img { width: 16px; height: 16px; }
+
+.copyright { font-size: .78rem; }
+
+.rodape__selo {
+  width: 52px;
+  height: auto;
+}
+
+/* ==========================================================================
+   RESPONSIVO (Passo 5)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .contato__grid { grid-template-columns: 1fr; }
+  .galeria { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 700px) {
+  .menu-toggle-label { display: flex; }
+
+  .nav-principal {
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: var(--branco);
+    border-bottom: 1px solid var(--borda);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transicao);
+  }
+
+  .cabecalho__barra { position: relative; }
+
+  .nav-principal__lista { flex-direction: column; padding: 0 6%; }
+  .nav-principal__link { display: block; padding: .9rem 0; border-bottom: 1px solid var(--borda); }
+
+  /* pseudoclasse :checked controlando o menu mobile sem JavaScript */
+  .menu-toggle:checked ~ .nav-principal { max-height: 220px; }
+
+  .galeria { grid-template-columns: 1fr; }
+  .rodape__barra { justify-content: center; text-align: center; }
+  .rodape__selo { display: none; }
+}
